@@ -23,7 +23,7 @@ class CreatePostTagTable extends Migration
 
             //Relation
             $table->foreign('post_id')->references('id')->on('posts')
-                ->onDelete('cascade')//cascade: si se elimina un usuario se eliminan los post de ese usuario
+                ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')
                 ->onDelete('cascade')
