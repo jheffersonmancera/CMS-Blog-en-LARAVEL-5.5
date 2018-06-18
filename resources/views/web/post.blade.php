@@ -17,7 +17,7 @@
 				@endif
 				{{$post->excerpt}}
 				<hr>
-				{!! $post->body!!}<!-- !! se usa para conservar codigo html -->
+				{!! $post->body !!}<!-- !! se usa para conservar codigo html -->
 				<hr>
 				Etiquetas
 				@foreach($post->tags as $tag)

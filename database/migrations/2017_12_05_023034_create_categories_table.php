@@ -13,10 +13,10 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {//*1_create_categories_table.php
             $table->increments('id');
             $table->string('name', 128);
-            $table->string('slug', 128)->unique();//unique:no se repite en esta tabla slug: url amigable ex: laravel5-5
+            $table->string('slug', 128)->unique();//*2_create_categories_table.php
             $table->mediumText('body')->nullable();//nullable: puede estar vacio o nulo.
 
 

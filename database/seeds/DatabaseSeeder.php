@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {	//orden para llenar las tablas
-        $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);//*1DatabseSeeder
         $this->call(CategoriesTableSeeder::class);
         $this->call(TagsTableSeeder::class);
         $this->call(PostsTableSeeder::class);

@@ -7,11 +7,12 @@ $factory->define(App\Post::class, function (Faker $faker) {
     return [
     	'user_id'=> rand(1,30),
     	'category_id'=> rand(1,20),
-        'name'=> $title,
+        'name'=> 
+        $title,
         'slug'=> str_slug($title),
         'excerpt'=> $faker->text(200),
         'body'=> $faker->text(500),
         'file'=> $faker->imageUrl($width = 1200, $height = 400),
-        'status'=> $faker->randomElement(['DRAFT','PUBLISHED']),
+        'status'=> $faker->randomElement(['DRAFT','PUBLISHED']),//*1PostFactory.php: 
     ];
 });

@@ -15,24 +15,24 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();//unsigned: se usa para que no hayan numeros negativos
+            $table->integer('user_id')->unsigned();//*1_create_posts_table.php:
             $table->integer('category_id')->unsigned();
-            $table->string('name', 128);
-            $table->string('slug', 128)->unique();
+            $table->string('name', 128);//*3_create_posts_table.php: 
+            $table->string('slug', 128)->unique();//*4_create_posts_table.php:
 
-            $table->mediumText('excerpt')->nullable();   //extracto
-            $table->text('body');
-            $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');//es importante que las constantes sean en mayusculas.
+            $table->mediumText('excerpt')->nullable();//*2_create_posts_table.php:   
+            $table->text('body');//*5_create_posts_table.php:
+            $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');//*6_create_posts_table.php:
 
             $table->string('file', 128)->nullable();
             $table->timestamps();
 
             //Relation
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade')//cascade: si se elimina un usuario se eliminan los post de ese usuario
-                ->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')//*7_create_posts_table.php
+                ->onDelete('cascade')//*8_create_posts_table.php
+                ->onUpdate('cascade');//*9_create_posts_table.php
             $table->foreign('category_id')->references('id')->on('categories')
-                ->onDelete('cascade')
+                ->onDelete('cascade')//*9_create_posts_table.php
                 ->onUpdate('cascade');    
 
 

@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {//*1_create_users_table.php
             $table->increments('id');
             $table->string('name');
             $table->string('email',128)->unique();//se agrega longitud 128 al campo para evitar error de emigracion

@@ -15,7 +15,13 @@
 				<img src="{{$post->file}}" class="img-responsive">
 				@endif
 				{{$post->excerpt}}
+				<br>
+				<button class="btn btn-sm btn-info pull-left">
+					<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>	
+					3
+				</button> 
 				<a href="{{route('post', $post->slug)}}" class="pull-right">Leer más</a>
+
 			</div>
 		</div>
 		@endforeach

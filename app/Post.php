@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 	
-	//guardar datos de forma masiva
-	protected $fillable = [
-		'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file'
+	
+	protected $fillable = [//*4Post:
+		'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file',
 	];
 
 
@@ -18,12 +18,11 @@ class Post extends Model
     	
     }
     
-    public function category(){
+    public function category(){//*3Post.php
     	return $this->belongsTo(Category::class);////Un Post pertence a una Category
     	
     }
-    public function tags(){
-    	return $this->belongsToMany(Tag::class);//belongs to many relacion de muchos a muchos//tiene y pertenece a muchas Tag
-    	
+    public function tags(){//*2Post.php
+    	return $this->belongsToMany(Tag::class);//*1Post.php
     }
 }

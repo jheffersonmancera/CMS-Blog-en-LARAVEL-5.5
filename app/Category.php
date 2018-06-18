@@ -12,7 +12,7 @@ class Category extends Model
 
 
 	public function posts(){
-    	return $this->hasMany(Post::class);//hasmany relacion de uno a muchos
+    	return $this->hasMany(Post::class);//*1Category.php
     	
     }
 }
